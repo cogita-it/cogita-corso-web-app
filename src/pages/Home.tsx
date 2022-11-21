@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useRoutes } from "react-router-dom";
 import "./Home.css"
 
 function Home() {
@@ -18,12 +19,14 @@ function Home() {
     return () => clearTimeout(intervalId);
   }, [])
 
+  const navigate = useNavigate()
+
   return (
     <div className='container'>
       <header>
         <h1>La chat veloce e sicura per tutti</h1>
         <p>{sentences[sentenceIndex]}</p>
-        <button>Inizia subito</button>
+        <button onClick={() => navigate("./login")}>Inizia subito</button>
         <div className='header-img-container'>
           <img src="./header-girl-texting.jpg" alt="" />
           <img src="./header-people-talking.jpg" alt="" />
