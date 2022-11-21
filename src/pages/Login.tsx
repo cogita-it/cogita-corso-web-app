@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { signIn, signUp } from "../services/LoginService";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,17 +9,33 @@ function Login() {
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    
+    if (localStorage.getItem("userId")) {
+        navigate("../chat")
+    }
   }, [])
 
   const onSignIn = () => {
-    
+    setErrorMessage("")
+    signIn(email, password).then((userId: string) => {
+      // redirect
+      localStorage.setItem("userId", userId);
+      navigate("../chat");
+    })
+    .catch((error) => setErrorMessage("Si e' verificato un errore!"));
   };
 
   const onSignUp = () => {
-    
+    setErrorMessage("")
+    signUp(email, password, username)
+      .then((userId: string) => {
+        // redirect
+        localStorage.setItem("userId", userId);
+        navigate("../chat");
+      })
+      .catch((error) => setErrorMessage("Si e' verificato un errore!"));
   };
 
   return (
