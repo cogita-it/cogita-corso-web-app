@@ -1,0 +1,35 @@
+.new-chat-container {
+  background-color: #303e4d;
+  padding: 26px;
+  border-radius: 12px;
+  color: white;
+}
+
+.new-chat-container > p {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.new-chat-contact-container {
+  padding: 12px 16px;
+  background-color: #3a4b5b;
+  border-radius: 8px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+.new-chat-contact-container:hover {
+  background-color: #8096ab;
+  transition: 0.2s all;
+}
+
+.new-chat-close-modal {
+  color: red;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}

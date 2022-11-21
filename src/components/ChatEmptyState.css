@@ -1,0 +1,18 @@
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-state-container > img {
+  width: 300px;
+}
+
+.empty-state-container > p {
+  width: 400px;
+  color: #8096ab;
+  font-size: 18px;
+  text-align: center;
+}
