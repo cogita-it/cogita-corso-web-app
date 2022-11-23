@@ -1,6 +1,7 @@
 import "./Chat.css";
 import ChatList from "../components/ChatList";
 import { useEffect, useState } from "react";
+import ChatDetails from "../components/ChatDetails";
 import { ChatPreview } from "../models/ChatPreview";
 import { getChatPreviews } from "../services/ChatPreviewService";
 import { getAuth } from "firebase/auth";
@@ -42,6 +43,7 @@ function Chat() {
         user={user}
         onChatSelected={(preview) => setSelectedChat(preview)}
       />
+      <ChatDetails user={user} chat={selectedChat} />
       </>
       }
     </div>
